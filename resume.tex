@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.1.5, 1 December 2018) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e]{altacv}
+
+
+%% AltaCV uses the fontawesome and academicon fonts
+%% and packages.
+%% See texdoc.net/pkg/fontawecome and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+\geometry{left=1cm,right=9cm,marginparwidth=6.8cm,marginparsep=1.2cm,top=1.25cm,bottom=1.25cm}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Lato}
+\else
+  % If using pdflatex:
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage[default]{lato}
+\fi
+
+% Change the colours if you want to
+\definecolor{Mulberry}{HTML}{72243D}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{heading}{Sepia}
+\colorlet{accent}{Mulberry}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+\addbibresource{biblio.bib}
+
+
+\begin{document}
+
+\name{Sebastian Nesgaard Jensen}
+\tagline{Ph.D., Computer Vision}
+\photo{2.8cm}{graphic/snje.jpg}
+\personalinfo{%
+  % Not all of these are required!
+  % You can add your own with \printinfo{symbol}{detail}
+  \email{s.nesgaard@gmail.com}
+  \phone{41 16 17 92}
+  \mailaddress{Wittenberggade 11 st th}
+  \location{København S, Danmark}
+  \github{github.com/snesgaard}
+  %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+  % \orcid{orcid.org/0000-0000-0000-0000}
+}
+\begin{fullwidth}
+\makecvheader
+\end{fullwidth}
+
+\cvsection[page1sidebar]{Erfaring}
+
+\cvevent{Lead Algorithm Developer}{3DIntegrated A/S}{Feb 2018 --}{København}
+En lille startup på 5 der udvikler machine vision til lapaskopisk kirugi. Primære produkt er en løsning til 3D rekonstruktion i realtid af kroppens organer og tracking af kirugens instrumenter relativt til dette. Vores redskaber er kirugens kamera, laser lys mønstre og masser af solid Linux kode.
+
+\divider
+
+For at opsummere så er jeg...
+\begin{itemize}
+  \item Hovedansvarlig udvikler for software, 3D vision algorithmer og system test.
+  \item Beskæftiget med algorithmiske emner som: 3D stereo vision, deep learning, camera pose estimation, multivariate statestik og non-rigid SLAM.
+  \item Beskæftiget med software emner som: Linux, system arkitektur, Robot Operating System (ROS), C++, Python, CUDA og system test design.
+  \item Meddesigner af firmaets struktureret lys mønster.
+  \item Ansvarlig for at optimerede firmaets algorithme til at kunne køre i stabil realtid.
+  \item Ansvarlig for at indeføre automatiske style checks, unit tests og regression tests.
+\end{itemize}
+
+\divider
+
+\cvevent{Embedded Software Developer}{Unisensor A/S}{Aug 2013 -- Nov 2014}{Allerød}
+En mellemstor virksomhed der udvikler automatiske mikroskoper.
+
+\divider
+
+Her har jeg...
+
+\begin{itemize}
+\item Været hovedansvarlig software udvikler for firmaets automatiske mikroskop platform.
+\item Beskæftiget mig med Linux, C++ og Lua.
+\item Stabiliseret en software-base der var kendt at crashe i tide og utide.
+\item Introduceret firmaet til SSE-vector instruktioner, hvilket åbnede en masse døre til bl.a. køre algorithmer på selve mikroskopet.
+\end{itemize}
+
+
+\cvsection{Fritid}
+Jeg er lidt af en nørd og elsker at programmere i min fritid. Det føles lidt som verdens mest komplekse og belønnende puslespil. Er dog ikke min eneste interesse! At tegne er også en af mine store lidenskaber (selvom jeg ikke er specielt god til det).
+
+Når jeg ikke gør det spiller jeg brætspil og/eller drikker øl med vennerne. Eller læser op på de nyeste opdagelser indefor astronomi, historie, kvantefysik etc.
+
+\clearpage
+
+\cvsection[page2sidebar]{Publications}
+
+\nocite{*}
+
+
+\printbibliography[heading=pubtype,title={\printinfo{\faFileTextO}{Journal Articles}}, type=article]
+
+\divider
+
+\printbibliography[heading=pubtype,title={\printinfo{\faGroup}{Conference Proceedings}},type=inproceedings]
+
+\end{document}
